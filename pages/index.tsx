@@ -3,19 +3,22 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import Card from '@/components/Card'
+import Carrousel from '@/components/Carrousel'
 
 const Home: NextPage = () => {
   return (
     <div>
-      <h1 >
-        Main Page
+      <h1 
+        className='text-center my-10'
+      >
+        Wellcome to Camilo Store!
       </h1>
 
+      {/* <Carrousel/> */}
       <section 
         style={{
           display:"grid",
-          gap: "1rem",
-          // gridAutoRows: "28rem",
+          gap: "4rem",
           gridTemplateColumns: "repeat(auto-fill,minmax(15rem, 1fr))",
           width:"80%",
           margin:"auto"
@@ -30,11 +33,6 @@ const Home: NextPage = () => {
     </div>
   )
 }
-
-  // display: grid;
-  // gap: 1rem;
-  // grid-auto-rows: 22rem;
-  // grid-template-columns: repeat(auto-fill,minmax(15rem, 1fr));
 
 
 export default Home
