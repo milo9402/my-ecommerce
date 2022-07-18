@@ -1,8 +1,31 @@
 import Header from "components/Header";
 import Footer from "@/components/Footer";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const Layout = ({ children }) => {
+
+    const currentRoute = useRouter()
+    const customLayout = () => {
+        if(currentRoute.route === '/login' || currentRoute.route === '/about'){
+            return (
+                <main className="flex-grow">
+                    {children}
+                </main>
+            )
+        } else {
+            return (
+                <>
+                    <Header />
+                    <main className="flex-grow">
+                        {children}
+                    </main>
+                    <Footer />
+                </>
+            )
+        }
+    }
+
     return (
         <>
             <Head>
@@ -11,11 +34,7 @@ const Layout = ({ children }) => {
                 <link rel="icon" href="/carvajal-favicon.png" />
             </Head>
             <div className="min-h-screen flex flex-col">
-                <Header />
-                <main className="flex-grow">
-                    {children}
-                </main>
-                <Footer />
+                {customLayout()}
             </div>
         </>
     )

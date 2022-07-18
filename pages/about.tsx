@@ -4,7 +4,9 @@ import type { NextPage } from 'next'
 
 const About: NextPage = () => {
     return (
-        <div>about</div>
+        <div>
+            Pagina que hablara sobre mi
+        </div>
     )
 }
 
