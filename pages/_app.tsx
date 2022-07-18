@@ -6,13 +6,11 @@ import Layout from '@/components/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-    <ThemeProvider>
+    <ThemeProvider enableSystem={true} attribute="class">
       <Layout>
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
-    </>
   )
 }
 
