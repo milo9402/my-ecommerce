@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
 
     const currentRoute = useRouter()
     const customLayout = () => {
-        if(currentRoute.route === '/login' || currentRoute.route === '/about'){
+        if(currentRoute.route === '/login'){
             return (
                 <main className="flex-grow">
                     {children}

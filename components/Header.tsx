@@ -62,7 +62,7 @@ const Header = () => {
     }
 
     return (
-        <nav className="h-16 flex items-center justify-around bg-green-400 dark:bg-gray-800 dark:text-white navbar navbar-expand-lg navbar-light">
+        <nav className="font-semibold h-16 flex items-center justify-around bg-green-400 dark:bg-gray-800 text-white navbar navbar-expand-lg navbar-light">
             <ul className="flex gap-4">
                 { navigations.map((nav, index) => (
                 <Link 
