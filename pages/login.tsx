@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import Router from "next/router";
 
 const Login: NextPage = () => {
+  const [loginError, setLoginError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const {
     handleSubmit,
@@ -14,7 +16,7 @@ const Login: NextPage = () => {
   } = useForm();
 
   const submitHandler = ({ username, password}) => {
-
+    setLoading(true)
       console.log({ username, password})
       //   // aqui se haria la consulta para login
       axios
@@ -27,15 +29,15 @@ const Login: NextPage = () => {
           Router.push('/')
         })
         .catch(e => {
-          console.error("Ocurrio un error al loguear")
+          console.error(e)
+          setLoginError(e.response.data)
+          setLoading(false)
         })
   }
-
-
-
   
     return (
       <section className="h-full flex justify-center gradient-form bg-gray-200 md:h-screen">
+        
         <div className="container py-12 px-6 h-full">
           <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
             <div className="xl:w-10/12">
@@ -51,6 +53,15 @@ const Login: NextPage = () => {
                         />
                       </div>
                       <form className="mt-4" onSubmit={handleSubmit(submitHandler)}>
+                          {
+                            loginError && (
+                              <div className="bg-red-100 rounded-lg py-5 px-6 mb-3 text-base text-red-700 inline-flex items-center w-full" role="alert">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times-circle" className="w-4 h-4 mr-2 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                  <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"></path>
+                                </svg>
+                                {loginError}
+                              </div>)
+                          }
                         <div className="mb-4">
                           <input
                             type="text"
@@ -87,7 +98,7 @@ const Login: NextPage = () => {
                             data-mdb-ripple="true"
                             data-mdb-ripple-color="light"
                           >
-                            Log in
+                            { loading ? 'Loading...' : 'Log in' }
                           </button>
                           <a className="text-gray-500" href="#!">Forgot password?</a>
                         </div>

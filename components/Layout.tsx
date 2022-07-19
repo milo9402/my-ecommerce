@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
             return (
                 <>
                     <Header />
-                    <main className="flex-grow bg-gray-100">
+                    <main className="flex-grow bg-gray-100 dark:bg-gray-600 pb-10">
                         {children}
                     </main>
                     <Footer />
