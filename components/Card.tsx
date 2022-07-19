@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 
-function Card({id,title, description, image, price, category}) {
+function Card({id,title, image, price, category}) {
   return (
     <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg flex flex-col">
       <div>
@@ -14,7 +14,7 @@ function Card({id,title, description, image, price, category}) {
       </div>
         <div className="p-6 hover:bg-gray-200 transition duration-300 ease-in h-full flex flex-col justify-between ">
           <div className="flex flex-col">
-            <p className="text-base font-medium text-indigo-500 mb-1">$ {price}</p>
+            <p className="text-basemb-1">$ {price}</p>
             <p className="font-semibold mb-3">{title}</p>
             <Link
                 href={`/product/${id}`}

@@ -37,7 +37,6 @@ const Home: NextPage = ({data}:any) => {
             key={index}
             id={card.id}
             title={card.title}
-            description={card.description}
             image={card.image}
             price={card.price}
             category={card.category}
