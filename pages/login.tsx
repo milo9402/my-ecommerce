@@ -1,9 +1,39 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
+import { useState } from "react";
 import type { NextPage } from 'next'
-
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import Router from "next/router";
 
 const Login: NextPage = () => {
+
+  const {
+    handleSubmit,
+    register,
+    formState:{errors},
+  } = useForm();
+
+  const submitHandler = ({ username, password}) => {
+
+      console.log({ username, password})
+      //   // aqui se haria la consulta para login
+      axios
+        .post('https://fakestoreapi.com/auth/login', {
+          username,
+          password
+        })
+        .then(response => {
+          console.log(response);
+          Router.push('/')
+        })
+        .catch(e => {
+          console.error("Ocurrio un error al loguear")
+        })
+  }
+
+
+
+  
     return (
       <section className="h-full flex justify-center gradient-form bg-gray-200 md:h-screen">
         <div className="container py-12 px-6 h-full">
@@ -20,27 +50,40 @@ const Login: NextPage = () => {
                           alt="logo"
                         />
                       </div>
-                      <form className="mt-4">
+                      <form className="mt-4" onSubmit={handleSubmit(submitHandler)}>
                         <div className="mb-4">
                           <input
                             type="text"
                             className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none"
-                            id="exampleFormControlInput1"
+                            id="username"
                             placeholder="Username"
+                            name="username"
+                            autoComplete="current-username"
+                            {...register('username', {required:'Please enter your username'})}
                           />
+                          {errors.username && (<div className="text-red-500" > { errors.username.message } </div> )}
                         </div>
                         <div className="mb-4">
                           <input
                             type="password"
                             className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-green-600 focus:outline-none"
-                            id="exampleFormControlInput1"
+                            id="password"
                             placeholder="Password"
+                            name="password"
+                            autoComplete="current-password"
+                            {...register('password', 
+                              {
+                                required:'Please enter your password',
+                                minLength:{value: 5, message:'password is more than 5 chars'}
+                              }
+                            )}
                           />
+                            {errors.password && (<div className="text-red-500" > { errors.password.message } </div> )}
                         </div>
                         <div className="text-center pt-1 mb-12 pb-1">
                           <button
                             className="inline-block px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md bg-green-500 hover:bg-green-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3"
-                            type="button"
+                            type="submit"
                             data-mdb-ripple="true"
                             data-mdb-ripple-color="light"
                           >
@@ -75,5 +118,6 @@ const Login: NextPage = () => {
       </section>
     )
 }
+
 
 export default Login;

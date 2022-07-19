@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
+      sans: ['Helvetica', 'Arial', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
     },
     screens: {

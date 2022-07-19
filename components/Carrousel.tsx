@@ -8,13 +8,29 @@ function Carrousel() {
     return (
         <Carousel showThumbs={false} >
             <div>
-                <img src="https://s3.amazonaws.com/cdn.wp.m4ecmx/wp-content/uploads/2015/05/31143018/Qu%C3%A9-es-el-eCommerce-compressor.jpg" />
+                <img
+                    style={{
+                        maxHeight:"600px",
+                    }} 
+                    src="https://i.ytimg.com/vi/SECEAv8n04A/maxresdefault.jpg"
+                />
             </div>
             <div>
-                <img src="https://s3.amazonaws.com/cdn.wp.m4ecmx/wp-content/uploads/2015/05/31143018/Qu%C3%A9-es-el-eCommerce-compressor.jpg" />
+                <img
+                    style={{
+                        maxHeight:"600px",
+                    }}
+                    src="https://s3.amazonaws.com/cdn.wp.m4ecmx/wp-content/uploads/2015/05/31143018/Qu%C3%A9-es-el-eCommerce-compressor.jpg"
+
+                />
             </div>
             <div>
-                <img src="https://s3.amazonaws.com/cdn.wp.m4ecmx/wp-content/uploads/2015/05/31143018/Qu%C3%A9-es-el-eCommerce-compressor.jpg" />
+                <img
+                    style={{
+                        maxHeight:"600px",
+                    }}
+                    src="https://cdn.shopify.com/s/files/1/0426/9209/articles/Copy_of_tamano_imagenes_blog_posts_6_1024x768.png?v=1595441097"
+                />
             </div>
         </Carousel>
     );

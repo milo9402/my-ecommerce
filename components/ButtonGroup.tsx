@@ -8,7 +8,7 @@ const ButtonGroup = () => {
             className="flex flex-row justify-center"
         >
             <button
-                className={`hover:ring-2 rounded-full bg-gray-300 hover:ring-gray-300 w-5 h-5 text-center`}
+                className={`hover:ring-2 rounded-lg bg-indigo-400 hover:ring-indigo-400 w-7 h-7 text-center`}
                 onClick={()=> setProductQuantity(productQuantity > 0 ? productQuantity-1: productQuantity)}
             >
                 -
@@ -19,7 +19,7 @@ const ButtonGroup = () => {
                 {productQuantity}
             </p>
             <button
-                className={`hover:ring-2 rounded-full bg-gray-300 hover:ring-gray-300 w-5 h-5 text-center`}
+                className={`hover:ring-2 rounded-lg bg-indigo-400 hover:ring-indigo-400 w-7 h-7 text-center`}
                 onClick={()=> setProductQuantity(productQuantity+1)}
             >
                 +

@@ -1,21 +1,28 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import axios from 'axios'
 
 import Card from '@/components/Card'
 import Carrousel from '@/components/Carrousel'
 
-const Home: NextPage = () => {
+const Home: NextPage = ({data}:any) => {
   return (
     <div>
-      <h1 
-        className='text-center my-10'
+      <section
+        style={{
+          display:"flex",
+          width:"80%",
+          margin:"auto"
+        }}
       >
-        Wellcome to Camilo Store!
-      </h1>
+        <Carrousel/>
+      </section>
 
-      {/* <Carrousel/> */}
-      <section 
+
+      <h1 className="text-center my-20 text-5xl font-semibold">Te damos la bienvenida a nuestra tienda virtual</h1>
+
+      <section
         style={{
           display:"grid",
           gap: "4rem",
@@ -24,15 +31,37 @@ const Home: NextPage = () => {
           margin:"auto"
         }}
       >
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+        
+      { data.map((card, index) => (
+          <Card
+            key={index}
+            id={card.id}
+            title={card.title}
+            description={card.description}
+            image={card.image}
+            price={card.price}
+            category={card.category}
+
+          />
+        ))
+      }
       </section>
     </div>
   )
 }
 
+export async function getStaticProps() {
+  try {
+    const res = await axios.get('https://fakestoreapi.com/products');
+    const data = res.data;
+    return {
+      props: {
+        data
+      }
+    }
+  } catch (error) {
+    return { error };
+  }
+}
 
 export default Home
