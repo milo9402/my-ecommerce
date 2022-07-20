@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bienvenido al respositorio prueba frontend Carvajal  
 
-## Getting Started
+#### Acerca de este repositorio
 
-First, run the development server:
+En este repositorio se encuentra el codigo fuente del proyecto para aspirar al cargo de desarrollador frontend para la empresa Carvajal usando NextJs  .
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Instalacion y uso
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+##### Instalacion
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Para instalar el repositorio y empezar a trabajar sobre el lo uncio que debes hacer despues de clonarlo tu computador es correr el comando **`npm install` para instalar las dependencias** y por ultimo **`npm run dev` para iniciar el servidor**.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+##### Rutas
 
-## Learn More
+El proyecto cuenta con unicamente dos rutas por las cuales el usuario podra navegar, **actualmente el proyecto no cuenta con rutas protegidas**
 
-To learn more about Next.js, take a look at the following resources:
+###### Lista de rutas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. /login : Para ingresar a la pagina de Login
+2. /about : Para ingresar a la pagina de contacto
+3. / : Para ingresar al listado de productos
+4. /product/{productId} : Para ingresar al detalle de un product
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+##### Uso
 
-## Deploy on Vercel
+Con el fin de generar un uso rapido, se crearon 4 usuarios por defecto con sus respectivos credenciales de acceso, para todos los casos, **la clave es 123abc**.
+<br/>
+**NOTA** : Para el correcto funcionamiento de la aplicacion es importante que el usuario primero ingrese las credenciales de acceso con su respectiva clave.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+###### Lista de usuarios
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. camilo
+
+---
+
+#### Tecnologias usadas
+
+
+Libreria  | Version
+------------- | -------------
+react  | 17.0.2
+react-dom | 17.0.2
+jest | 26.6.0
+react-router-dom  | 5.2.0
+@testing-library/react | 12.0.0
