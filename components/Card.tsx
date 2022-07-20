@@ -1,18 +1,18 @@
 import React from 'react';
-import ButtonGroup from '@/components/ButtonGroup';
+import Button from '@/components/Button';
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSelector } from 'react-redux'
 
 
 function Card({id,title, image, price, category}) {
   return (
-    <div className="h-full border-2 border-gray-200 border-opacity-60 dark:border-gray-500 rounded-lg flex flex-col">
+    <div className="hover:bg-green-200  dark:hover:bg-gray-700 transition duration-300 ease-in h-full border-2 border-gray-200 border-opacity-60 dark:border-gray-300 rounded-lg flex flex-col">
       <div>
-
-        <img className="lg:h-72 md:h-48 w-full object-scale-down object-center p-6"
+        <img className="lg:h-72 md:h-48 w-full object-fill object-center p-6"
             src={image}alt="blog"/>
       </div>
-        <div className="p-6 hover:bg-green-200 dark:hover:bg-gray-700 transition duration-300 ease-in h-full flex flex-col justify-between ">
+        <div className="p-6  h-full flex flex-col justify-between ">
           <div className="flex flex-col">
             <p className="text-basemb-1">$ {price}</p>
             <p className="font-semibold mb-3">{title}</p>
@@ -30,7 +30,9 @@ function Card({id,title, image, price, category}) {
           </div>
 
           <div>
-            <ButtonGroup/>
+            <Button className={"bg-green-300 dark:bg-gray-600 w-full"} onClick={undefined}>
+              Agregar
+            </Button>
           </div>
         </div>
     </div>

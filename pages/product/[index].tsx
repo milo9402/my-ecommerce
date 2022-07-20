@@ -2,7 +2,6 @@ import React from 'react'
 import type { NextPage } from 'next'
 import axios from 'axios'
 import Button from '@/components/Button'
-import ButtonGroup from '@/components/ButtonGroup'
 
 const ProductDetail: NextPage = ({data}:any) => {
     const { id, img, description, title, price } = data;
@@ -31,10 +30,9 @@ const ProductDetail: NextPage = ({data}:any) => {
               </div>
 
               <span className="flex flex-col md:flex-row justify-around ">
-                <Button className=" bg-green-300 " onClick={undefined}>
-                  Agregar producto
+                <Button className={"bg-green-300 dark:bg-gray-600 w-full"} onClick={undefined}>
+                  Agregar
                 </Button>
-                <ButtonGroup/>
               </span>
 
             </div>
