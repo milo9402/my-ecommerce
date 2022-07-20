@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 function Card({id,title, image, price, category}) {
   return (
-    <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg flex flex-col">
+    <div className="h-full border-2 border-gray-200 border-opacity-60 dark:border-gray-500 rounded-lg flex flex-col">
       <div>
 
         <img className="lg:h-72 md:h-48 w-full object-scale-down object-center p-6"

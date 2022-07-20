@@ -13,8 +13,8 @@ const Header = () => {
     }, []);
   
     const navigations = [
-        { label: 'Products', path:'/'},
-        { label: 'About us', path:'/about'},
+        { label: 'Productos', path:'/'},
+        { label: 'Acerca de mi', path:'/about'},
     ];
 
     const renderThemeChanger = () => {
@@ -26,12 +26,12 @@ const Header = () => {
         if(currentTheme === 'dark') {
           return (
             <>
-              <Button className="bg-green-200 dark:bg-gray-600" onClick={undefined}>
+              <Button className=" bg-green-300 dark:bg-gray-600" onClick={undefined}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </Button>
-              <Button className="bg-green-200 dark:bg-gray-600"
+              <Button className="ml-2 bg-green-300 dark:bg-gray-600"
                 onClick={() => setTheme('light')}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -43,12 +43,12 @@ const Header = () => {
         } else {
           return (
             <>
-              <Button className="bg-green-200" onClick={undefined}>
+              <Button className=" bg-green-300" onClick={undefined}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </Button>
-              <Button className="bg-green-200"
+              <Button className="ml-2 bg-green-300"
                 onClick={() => setTheme('dark')}
                 >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

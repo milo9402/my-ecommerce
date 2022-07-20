@@ -21,7 +21,15 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
-      "@/assets/*": ["assets/*"]
+      "@/assets/*": [
+        "assets/*"
+      ],
+      "@/slices/*": [
+        "slices/*"
+      ],
+      "@/app/*": [
+        "app/*"
+      ]
     }
   },
   "include": [

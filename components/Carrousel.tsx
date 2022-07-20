@@ -12,7 +12,7 @@ function Carrousel() {
                     style={{
                         maxHeight:"600px",
                     }} 
-                    src="https://i.ytimg.com/vi/SECEAv8n04A/maxresdefault.jpg"
+                    src="https://www.muycomputerpro.com/wp-content/uploads/2021/03/fastly-10-consejos-ecommerce-principal.jpg"
                 />
             </div>
             <div>
