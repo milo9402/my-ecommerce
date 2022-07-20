@@ -2,10 +2,20 @@ import React from 'react';
 import Button from '@/components/Button';
 import Image from 'next/image'
 import Link from 'next/link'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToBasket } from '@/slices/basketSlice';
 
 
-function Card({id,title, image, price, category}) {
+function Card({id,title, image, price, category, description}) {
+
+  const dispatch = useDispatch();
+  const addItemToBasket = () => {
+    const product = {
+      id,title, image, price, category, description
+    }
+    dispatch(addToBasket(product))
+  }
+
   return (
     <div className="hover:bg-green-200  dark:hover:bg-gray-700 transition duration-300 ease-in h-full border-2 border-gray-200 border-opacity-60 dark:border-gray-300 rounded-lg flex flex-col">
       <div>
@@ -30,7 +40,7 @@ function Card({id,title, image, price, category}) {
           </div>
 
           <div>
-            <Button className={"bg-green-300 dark:bg-gray-600 w-full"} onClick={undefined}>
+            <Button className={"bg-green-300 dark:bg-gray-600 w-full"} onClick={addItemToBasket}>
               Agregar
             </Button>
           </div>

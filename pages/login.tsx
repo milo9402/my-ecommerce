@@ -72,7 +72,7 @@ const Login: NextPage = () => {
                             autoComplete="current-username"
                             {...register('username', {required:'Please enter your username'})}
                           />
-                          {errors.username && (<div className="text-red-500" > { errors.username.message } </div> )}
+                          {errors.username && <div className="text-red-500" > Error </div> }
                         </div>
                         <div className="mb-4">
                           <input
@@ -89,7 +89,7 @@ const Login: NextPage = () => {
                               }
                             )}
                           />
-                            {errors.password && (<div className="text-red-500" > { errors.password.message } </div> )}
+                            {errors.password && (<div className="text-red-500" > Error </div> )}
                         </div>
                         <div className="text-center pt-1 mb-12 pb-1">
                           <button

@@ -18,10 +18,7 @@ const Home: NextPage = ({data}:any) => {
       >
         <Carrousel/>
       </section>
-
-
       <h1 className="text-center my-8 text-5xl font-semibold">Te damos la bienvenida a nuestra tienda virtual</h1>
-
       <section
         style={{
           display:"grid",

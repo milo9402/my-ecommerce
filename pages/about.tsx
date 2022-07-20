@@ -16,7 +16,7 @@ const About: NextPage = () => {
         
             <section className="container mx-auto px-6 p-10 dark:bg-gray-800 bg-gray-100">
                 <h2 className="dark:text-white text-4xl font-bold text-center text-gray-800 mb-8">Mi trabajo</h2>
-                <div className="flex items-center flex-wrap mb-20">
+                <div className="flex items-center flex-wrap mb-20 mt-20">
                     <div className="w-full md:w-1/2 pr-10">
                         <h4 className=" dark:text-white text-3xl text-gray-800 font-bold mb-3">Softseguros</h4>
                         <p className=" dark:text-white text-gray-600 mb-8">
