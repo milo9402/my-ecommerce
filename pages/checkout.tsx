@@ -12,12 +12,12 @@ const CheckoutPage: NextPage = () => {
 
   console.log({items,total})
     return (
-        <div className='lg:flex max-w-screen-2x1 mx-auto'>
-          <div className='flex-grow m-5 shadow-sm'>
-            <img style={{maxHeight:"2400px", objectFit:'cover'}} 
-              src="https://www.muycomputerpro.com/wp-content/uploads/2021/03/fastly-10-consejos-ecommerce-principal.jpg"
+      <main className='lg:flex max-w-screen-2xl mx-auto md:mx-96'>
+          <div className='flex-grow  shadow-sm'>
+            <img style={{width:"2400px", height:'250px', objectFit:'cover'}} 
+              src="https://webengage.com/blog/wp-content/uploads/sites/4/2017/08/E-commerce-Checkout-Conversion-Rate.png"
             />
-          <div className='flex flex-col p-5 space-y-10 bg-white'>
+          <div className='flex flex-col p-5 space-y-10 mr-5 ml-5 mb-5 bg-white dark:bg-gray-500'>
             <h1 className='text-3xl border-b pb-4'>
               {items?.length === 0 
                 ? 'Aun no tienes productos en tu carrito '
@@ -39,25 +39,20 @@ const CheckoutPage: NextPage = () => {
             }
           </div>
         </div>
-        <div className='flex flex-col bg-white p-10 shadow-md'>
-          { items?.length > 0 && (
-            <>
-              <h2 className='whitespace-nowrap'>
-                Subtotal ({items?.length} items):
-                <span className='font-bold ml-2'>
-                  { accounting.formatMoney(total, 'EUR ')}
-                </span>
-                <Button className={"bg-green-300 dark:bg-gray-600 w-full"} onClick={()=>console.log('Aqui estaria pagando')}>
-                  Pagar
-                </Button>
-              </h2>
-            </>
-          )
-            
-          }
-        </div>
-
-      </div>
+        { items?.length > 0 && (
+          <div className='flex flex-col bg-white dark:bg-gray-500 p-10 shadow-md'>
+            <h2 className='whitespace-nowrap'>
+              Subtotal ({items?.length} items):
+              <span className='font-bold ml-2'>
+                { accounting.formatMoney(total, 'COP ')}
+              </span>
+            </h2>
+            <Button className={"bg-green-300 dark:bg-gray-600 w-full"} onClick={()=>console.log('Aqui estaria pagando')}>
+              Pagar
+            </Button>
+          </div>
+        )}
+      </main>
     )
 }
 

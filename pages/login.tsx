@@ -9,11 +9,16 @@ const Login: NextPage = () => {
   const [loginError, setLoginError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  type FormValues = {
+    username: string;
+    password: string;
+  };
+
   const {
     handleSubmit,
     register,
     formState:{errors},
-  } = useForm();
+  } = useForm<FormValues>();
 
   const submitHandler = ({ username, password}) => {
     setLoading(true)
@@ -72,7 +77,7 @@ const Login: NextPage = () => {
                             autoComplete="current-username"
                             {...register('username', {required:'Please enter your username'})}
                           />
-                          {errors.username && <div className="text-red-500" > Error </div> }
+                          {errors?.username && <p>{errors.username.message}</p> }
                         </div>
                         <div className="mb-4">
                           <input
@@ -89,7 +94,7 @@ const Login: NextPage = () => {
                               }
                             )}
                           />
-                            {errors.password && (<div className="text-red-500" > Error </div> )}
+                            {errors?.password && <p>{errors.password.message}</p>}
                         </div>
                         <div className="text-center pt-1 mb-12 pb-1">
                           <button

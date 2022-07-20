@@ -37,7 +37,7 @@ const Home: NextPage = ({data}:any) => {
             image={card.image}
             price={card.price}
             category={card.category}
-
+            description={card.description}
           />
         ))
       }

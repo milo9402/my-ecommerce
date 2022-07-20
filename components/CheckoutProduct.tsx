@@ -15,24 +15,20 @@ function CheckoutProduct({title, description,  price,  id,  image,  category}) {
   }
 
   const removeItemToBasket = () => {
-    dispatch(removeFromBasket(id))
+    dispatch(removeFromBasket({id}))
   }
   
   return (
-    <div className='grid grid-cols-5'>
-      <img style={{maxHeight:"200px"}} 
+    <div className='grid grid-cols-4 border-2 border-gray-200 border-opacity-60 '>
+      <img 
+        className="lg:h-72 md:h-48 w-full object-contain " 
         src={image}
       />
-      <div className='col-span-2 mx-5'>
-        <p>{title}</p>
-        <div className="flex"> 
-          <p>*</p>
-          <p>*</p>
-          <p>*</p>
-        </div>
+      <div className='col-span-2 mx-5 flex flex-col justify-content-evenly'>
+        <p className="font-semibold">{title}</p>
         <p className="text-xs mt-2 mb-2 line-clamp-3">{description}</p>
         <p className='mt-10 text-cutt_colors_light text-lg font-bold'>
-          {accounting.formatMoney(price, "EUR ")}
+          {accounting.formatMoney(price, "COP ")}
         </p>
       </div>
       <div className='flex flex-col space-y-2 my-auto justify-self-start'>
