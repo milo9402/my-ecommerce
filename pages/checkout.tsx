@@ -47,7 +47,7 @@ const CheckoutPage: NextPage = () => {
                 { accounting.formatMoney(total, 'COP ')}
               </span>
             </h2>
-            <Button className={"bg-green-300 dark:bg-gray-600 w-full"} onClick={()=>console.log('Aqui estaria pagando')}>
+            <Button className={"bg-green-300 dark:bg-gray-600 w-full"} onClick={()=>alert('Aqui estaria pagando')}>
               Pagar
             </Button>
           </div>

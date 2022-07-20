@@ -25,7 +25,7 @@ const Login: NextPage = () => {
       console.log({ username, password})
       //   // aqui se haria la consulta para login
       axios
-        .post('https://fakestoreapi.com/auth/login', {
+        .post('api/auth/login', {
           username,
           password
         })
